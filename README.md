@@ -68,51 +68,43 @@ References
 cargo build --release
 
 ## Usage:
-Generate a Key:
+### Generate a Key:
 
 cargo run -- generate-key
 
-Encrypt a Message:
+### Encrypt a Message:
 
 cargo run -- encrypt "Your secret message" --key YOUR_BASE64_KEY
 
-Decrypt:
+### Decrypt:
 cargo run -- decrypt BASE64_CIPHERTEXT --key YOUR_BASE64_KEY
 
-Example Workflow
-Generate a key:
+## Example Workflow
+### Generate a key:
 
 cargo run -- generate-key > secret.key
-Encrypt a message:
+### Encrypt a message:
 
 cargo run -- encrypt "Hello World" --key $(cat secret.key)
-Decrypt the message:
+### Decrypt the message:
 
 cargo run -- decrypt "BASE64_OUTPUT_FROM_STEP_2" --key $(cat secret.key)
 
-Technical Implementation
-Major Components
-Encryption Algorithm:
+## Technical Implementation
+### Major Components
+### Encryption Algorithm:
 
-AES-128 CBC implementation
+- AES-128 CBC implementation
+- Uses Rust cryptographic crates (aes, cbc, cipher)
+- Supports variable-length inputs with PKCS7 padding
+- Decryption Algorithm:
+- Accurate plaintext retrieval
+- Key verification and error handling
+- Padding removal
 
-Uses Rust cryptographic crates (aes, cbc, cipher)
-
-Supports variable-length inputs with PKCS7 padding
-
-Decryption Algorithm:
-
-Accurate plaintext retrieval
-
-Key verification and error handling
-
-Padding removal
-
-Testing:
-
-Unit tests for encryption/decryption
-
-Error case handling
+### Testing:
+- Unit tests for encryption/decryption
+- Error case handling
 
 
 
