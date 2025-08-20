@@ -1,6 +1,6 @@
-# CS-128-Honors-Final-Project
+# CryptCode
 
-Group Name: CryptCode
+CS-128-Honors-Final-Project in Rust
 
 Group member Names, NetID: Mitali Ahlawat (mitalia2), Divyanshi Bansal (dbansal5)
 
